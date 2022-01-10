@@ -25,8 +25,8 @@ const UserMenuItem = new Lang.Class({
   _init: function(user_manager, user) {
     this.parent();
     this.label = new St.Label({ text: user.get_real_name() });
-    this.actor.add(this.label);
-    this.actor.label_actor = this.label;
+    this.add(this.label);
+    this.label_actor = this.label;
     this.user_manager = user_manager;
     this.user = user;
 
@@ -58,11 +58,11 @@ const FastUserSwitchMenu = new Lang.Class({
     hbox.add_child(new St.Label({ text: '\u25BE',
                                   y_expand: true,
                                   y_align: Clutter.ActorAlign.CENTER }));
-    this.actor.add_child(hbox);
+    this.add_child(hbox);
     this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
     this._users = [];
     this._items = [];
-    this.actor.show();
+    this.show();
     this._user_manager = AccountsService.UserManager.get_default();
     if (!this._user_manager.is_loaded) {
       this._user_manager_loaded_id = 

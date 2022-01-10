@@ -1,7 +1,7 @@
 extension_id = $(PACKAGE)
 extension_base = @azuri.free.fr
 extension_version = $(VERSION)
-shell_versions = 3.10
+shell_versions = 40
 
 extension_url = http://github.com/HROMANO/$(extension_id)
 uuid = $(extension_id)$(extension_base)
